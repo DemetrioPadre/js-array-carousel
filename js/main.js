@@ -1,5 +1,5 @@
-const arrowUp = document.querySelector('arr-up');
-const arrowDown = document.querySelector('arr-down');
+const arrowUp = document.querySelector('.arr-up');
+const arrowDown = document.querySelector('.arr-down');
 const slidesContainer = document.getElementById('slidesContainer');
 
 //img array
