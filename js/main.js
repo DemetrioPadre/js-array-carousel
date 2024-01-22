@@ -57,7 +57,7 @@ function avanti() {
     const altraFoto = document.getElementsByClassName('slide');
     const newFoto = altraFoto[photoView];
     newFoto.classList.add('attiva');
-}
+};
 
 
 function indietro() {
@@ -74,10 +74,18 @@ function indietro() {
     const altraFoto = document.getElementsByClassName('slide');
     const newFoto = altraFoto[photoView];
     newFoto.classList.add('attiva');
-
-
-}
+};
 
 arrowUp.addEventListener('click', avanti());
 arrowDown.addEventListener('click', indietro());
-setInterval(avanti, 4000);
+
+
+let scroll = setInterval(avanti, 4000);
+
+slidesContainer.addEventListener('mouseover', function () {
+    clearInterval(scroll);
+});
+
+slidesContainer.addEventListener('mouseout', function () {
+    scroll = setInterval(avanti, 4000);
+});
