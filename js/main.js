@@ -25,10 +25,42 @@ for (i = 0; i < slides.length; i++) {
 };
 // slidesContainer.innerHTML = slideHtml;
 
+// setInterval(function () {
+//     const currentFoto = document.querySelector('.slide.attiva');
+//     currentFoto.classList.remove('attiva');
 
-//bottone giu
+//     if (photoView >= slides.length - 1) {
+//         photoView = 0;
 
-arrowDown.addEventListener('click', function () {
+//     } else {
+//         photoView++;
+//     }
+
+//     const altraFoto = document.getElementsByClassName('slide');
+//     const newFoto = altraFoto[photoView];
+//     newFoto.classList.add('attiva');
+
+// }, 4000);
+
+
+function avanti() {
+    const currentFoto = document.querySelector('.slide.attiva');
+    currentFoto.classList.remove('attiva');
+
+    if (photoView >= slides.length - 1) {
+        photoView = 0;
+
+    } else {
+        photoView++;
+    }
+
+    const altraFoto = document.getElementsByClassName('slide');
+    const newFoto = altraFoto[photoView];
+    newFoto.classList.add('attiva');
+}
+
+
+function indietro() {
     const currentFoto = document.querySelector('.slide.attiva');
     currentFoto.classList.remove('attiva');
 
@@ -44,39 +76,8 @@ arrowDown.addEventListener('click', function () {
     newFoto.classList.add('attiva');
 
 
-});
+}
 
-// bottone su
-
-arrowUp.addEventListener('click', function () {
-    const currentFoto = document.querySelector('.slide.attiva');
-    currentFoto.classList.remove('attiva');
-
-    if (photoView >= slides.length - 1) {
-        photoView = 0;
-
-    } else {
-        photoView++;
-    }
-
-    const altraFoto = document.getElementsByClassName('slide');
-    const newFoto = altraFoto[photoView];
-    newFoto.classList.add('attiva');
-});
-
-setInterval(function () {
-    const currentFoto = document.querySelector('.slide.attiva');
-    currentFoto.classList.remove('attiva');
-
-    if (photoView >= slides.length - 1) {
-        photoView = 0;
-
-    } else {
-        photoView++;
-    }
-
-    const altraFoto = document.getElementsByClassName('slide');
-    const newFoto = altraFoto[photoView];
-    newFoto.classList.add('attiva');
-
-}, 3000);
+arrowUp.addEventListener('click', avanti());
+arrowDown.addEventListener('click', indietro());
+setInterval(avanti, 4000);
