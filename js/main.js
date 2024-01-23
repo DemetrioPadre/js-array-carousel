@@ -76,8 +76,12 @@ function indietro() {
     newFoto.classList.add('attiva');
 };
 
-arrowUp.addEventListener('click', avanti());
-arrowDown.addEventListener('click', indietro());
+arrowUp.addEventListener('click', function () {
+    avanti();
+});
+arrowDown.addEventListener('click', function () {
+    indietro();
+});
 
 
 let scroll = setInterval(avanti, 4000);
